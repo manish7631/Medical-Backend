@@ -26,4 +26,14 @@ router.get("", async(req, res) => {
   });
   
 
+  router.get("/:id", async (req, res) => {
+    try {
+      const patient = await Patient.findById(req.params.id).lean().exec();
+  
+      return res.status(200).send(patient);
+    } catch (err) {
+      return res.status(500).send({ message: err.message });
+    }
+  });
+
   module.exports = router

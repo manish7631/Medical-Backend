@@ -3,6 +3,9 @@ const express = require("express")
 
 const PateinetController = require("./Controllers/Patient.Controller")
 
+const cors = require('cors')
+
+const SocketIo = require('socket.io')
 
 const app = express()
  app.use(express.json())
