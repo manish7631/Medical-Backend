@@ -1,5 +1,5 @@
 const express = require("express")
-const Patient = require("../Models/Patient.Model")
+ const Patient = require("../Models/Patient.Model")
 const router = express.Router() 
  
 router.get("", async(req, res) => {
@@ -14,16 +14,16 @@ router.get("", async(req, res) => {
   });
   
   
-  router.post("", async(req, res) => {
-    try{
-        const patient = await Patient.create(req.body);
+  // router.post("", async(req, res) => {
+  //   try{
+  //       const patient = await Patient.create(req.body);
   
-        return res.status(200).send(patient);
-    }
-    catch(err) {
-        return res.status(401).send({error: err.message});
-    }
-  });
+  //       return res.status(200).send(patient);
+  //   }
+  //   catch(err) {
+  //       return res.status(401).send({error: err.message});
+  //   }
+  // });
   
 
   router.get("/:id", async (req, res) => {

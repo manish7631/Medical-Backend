@@ -1,6 +1,8 @@
 const express = require("express")
  
 
+const patientController = require("./Controllers/Patient.Controller")
+
 const {PatientRegister, PatientLogin} = require("./Controllers/AuthPatient.contorller")
  
 const {DoctorRegister, DoctorLogin} = require("./Controllers/AuthDocotr.Controller")
@@ -27,7 +29,7 @@ const app = express()
  app.post("/doctorregister", DoctorRegister)
 
  app.post("/doctorlogin", DoctorLogin)
-
+app.use("/patient", patientController)
 module.exports = app
  
 
